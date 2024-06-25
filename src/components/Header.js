@@ -54,7 +54,19 @@ const Header = () => {
             <Button variant="contained" color="error" size="large">
               Call now!
             </Button>
-            <Button variant="outlined" color="error" size="large">
+            <Button
+              variant="outlined"
+              color="error"
+              sx={{
+                background: 'rgba(255,255,255, 0.85);',
+                '&:hover': {
+                  backgroundColor: '#ffffff',
+                  strokeWidth: '2',
+                  stroke: '#fff',
+                },
+              }}
+              size="large"
+            >
               Explore menu
             </Button>
           </ButtonGroup>
