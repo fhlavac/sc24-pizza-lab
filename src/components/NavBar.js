@@ -2,6 +2,7 @@ import { AppBar, Button, IconButton, Menu, MenuItem, Stack, Toolbar, Typography 
 import React, { useState } from 'react';
 import ModeSwitch from './ModeSwitch';
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
+import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
 import { Link as RouterLink } from 'react-router-dom';
 
 const NavBar = () => {
@@ -25,7 +26,7 @@ const NavBar = () => {
         </Typography>
         <Stack direction="row" sx={{ flexGrow: 1 }} spacing={2}>
           <Button variant="text" color="inherit" aria-label="menu" onClick={handleMenuOpen}>
-            Our Offerings
+            Our Offerings <ArrowDropDownTwoToneIcon htmlColor="#fff" />
           </Button>
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
             <MenuItem component={RouterLink} to="/food-menu" onClick={handleMenuClose}>
@@ -35,10 +36,30 @@ const NavBar = () => {
               Drink Menu
             </MenuItem>
           </Menu>
-          <Button variant="text" color="inherit" component={RouterLink} to="about">
+          <Button
+            sx={{
+              '&:hover': {
+                color: 'white',
+              },
+            }}
+            variant="text"
+            color="inherit"
+            component={RouterLink}
+            to="about"
+          >
             About Us
           </Button>
-          <Button variant="text" color="inherit" component={RouterLink} to="contact">
+          <Button
+            sx={{
+              '&:hover': {
+                color: 'white',
+              },
+            }}
+            variant="text"
+            color="inherit"
+            component={RouterLink}
+            to="contact"
+          >
             Contact
           </Button>
         </Stack>

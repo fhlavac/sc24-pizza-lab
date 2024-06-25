@@ -8,22 +8,35 @@ import Footer from './components/Footer';
 import FoodMenu from './views/FoodMenu';
 import DrinkMenu from './views/DrinkMenu';
 
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#056040',
+      contrastText: '#fff',
+    },
+  },
+});
+
 const App = () => {
   return (
-    <BrowserRouter>
-      {/* <CssBaseline />  */} {/* uncomment if you want to use material UI */}
-      <NavBar />
-      <main>
-        <Routes>
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/food-menu" element={<FoodMenu />} />
-          <Route path="/drink-menu" element={<DrinkMenu />} />
-          <Route index path="/" element={<Home />} />
-        </Routes>
-      </main>
-      <Footer />
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        {/* <CssBaseline />  */} {/* uncomment if you want to use material UI */}
+        <NavBar />
+        <main>
+          <Routes>
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/food-menu" element={<FoodMenu />} />
+            <Route path="/drink-menu" element={<DrinkMenu />} />
+            <Route index path="/" element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 

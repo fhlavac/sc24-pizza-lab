@@ -22,6 +22,11 @@ import pizzaFourCheese from '../assets/images/pizza-four-cheese.png';
 import pizzaMargherita from '../assets/images/pizza-margherita.png';
 import pizzaBbqChicken from '../assets/images/pizza-bbq-chicken.png';
 import pizzaMushroom from '../assets/images/pizza-mushroom.png';
+import pizzaBuffalo from '../assets/images/pizza-buffalo.png';
+import pizzaMeat from '../assets/images/pizza-meat.png';
+import pizzaHawaiian from '../assets/images/pizza-hawaiian.png';
+import pizzaPeperoni from '../assets/images/pizza-peperoni.png';
+import pizzaSpinach from '../assets/images/pizza-spinach.png';
 
 const pizzas = [
   {
@@ -33,14 +38,14 @@ const pizzas = [
   },
   {
     name: 'Pepperoni',
-    image: 'https://example.com/pepperoni.jpg',
+    image: pizzaPeperoni,
     description: 'Spicy pepperoni with mozzarella cheese and tomato sauce.',
     ingredients: 'Tomato sauce, mozzarella cheese, pepperoni',
     allergens: 'Dairy, Gluten',
   },
   {
     name: 'Hawaiian',
-    image: 'https://example.com/hawaiian.jpg',
+    image: pizzaHawaiian,
     description: 'Ham, pineapple, mozzarella cheese, and tomato sauce.',
     ingredients: 'Tomato sauce, mozzarella cheese, ham, pineapple',
     allergens: 'Dairy, Gluten',
@@ -68,14 +73,14 @@ const pizzas = [
   },
   {
     name: "Meat Lover's",
-    image: 'https://example.com/meat-lovers.jpg',
+    image: pizzaMeat,
     description: 'Pepperoni, sausage, ham, bacon, and ground beef.',
     ingredients: 'Tomato sauce, mozzarella cheese, pepperoni, sausage, ham, bacon, ground beef',
     allergens: 'Dairy, Gluten',
   },
   {
     name: 'Buffalo Chicken',
-    image: 'https://example.com/buffalo-chicken.jpg',
+    image: pizzaBuffalo,
     description: 'Buffalo chicken, mozzarella cheese, and ranch dressing.',
     ingredients: 'Buffalo sauce, mozzarella cheese, grilled chicken, ranch dressing',
     allergens: 'Dairy, Gluten',
@@ -89,7 +94,7 @@ const pizzas = [
   },
   {
     name: 'Spinach & Feta',
-    image: 'https://example.com/spinach-feta.jpg',
+    image: pizzaSpinach,
     description: 'Fresh spinach, feta cheese, mozzarella, and garlic.',
     ingredients: 'Tomato sauce, mozzarella cheese, fresh spinach, feta cheese, garlic',
     allergens: 'Dairy, Gluten',
@@ -120,7 +125,7 @@ const FoodMenu = () => {
   };
 
   return (
-    <Box sx={{ py: 4 }}>
+    <Box sx={{ py: 4, background: '#F2F0EA' }}>
       <Container maxWidth="lg">
         <Typography variant="h3" gutterBottom>
           Our Food Menu
@@ -151,13 +156,16 @@ const FoodMenu = () => {
                     sx={{
                       backgroundColor: '#fff',
                       '&.Mui-selected': {
-                        backgroundColor: '#056040',
+                        backgroundColor: '#cddfd8',
+                        stroke: '#fff',
                         '&:hover': {
-                          backgroundColor: '#056040',
+                          backgroundColor: '#e6efeb',
+                          strokeWidth: '2',
+                          stroke: '#fff',
                         },
                       },
                       '&:hover': {
-                        backgroundColor: '#056040',
+                        backgroundColor: '#e6efeb',
                       },
                       '&:focus': { outline: 'none' },
                     }}
@@ -170,16 +178,16 @@ const FoodMenu = () => {
                     sx={{
                       backgroundColor: '#fff',
                       '&.Mui-selected': {
-                        backgroundColor: '#056040',
+                        backgroundColor: '#cddfd8',
                         stroke: '#fff',
                         '&:hover': {
-                          backgroundColor: '#056040',
+                          backgroundColor: '#e6efeb',
                           strokeWidth: '2',
                           stroke: '#fff',
                         },
                       },
                       '&:hover': {
-                        backgroundColor: '#056040',
+                        backgroundColor: '#e6efeb',
                       },
                       '&:focus': { outline: 'none' },
                     }}
@@ -208,7 +216,9 @@ const FoodMenu = () => {
                     <IconButton onClick={() => handleDecreaseQuantity(index)}>
                       <Remove />
                     </IconButton>
-                    <Typography variant="body1">{quantity[index] || 1}</Typography>
+                    <Typography variant="body1" sx={{ margin: '0 12px' }}>
+                      {quantity[index] || 1}
+                    </Typography>
                     <IconButton onClick={() => handleIncreaseQuantity(index)}>
                       <Add />
                     </IconButton>

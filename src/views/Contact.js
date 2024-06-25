@@ -3,7 +3,7 @@ import { Box, Container, Grid, Typography, TextField, Button } from '@mui/materi
 
 const Contact = () => {
   return (
-    <Box sx={{ py: 4 }}>
+    <Box sx={{ py: 4, background: '#F2F0EA' }}>
       <Container maxWidth="md">
         <Typography variant="h3" gutterBottom>
           Contact Us
