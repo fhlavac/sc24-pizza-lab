@@ -47,26 +47,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-# Deploying application to surge
-
-Build your application
-
-```
-npm run build
-```
-or with yarn
-```
-yarn build
-```
-
-Login to surge (use one email address and one password per domain)
-```
-npx surge login
-```
-
-CD to build directory and deploy your app with surge where $YOUR_DOMAIN is assigned domain if you don't know it, please ping us on slack or email
-
-```
-npx surge --domain $YOUR_DOMAIN
-```
