@@ -1,10 +1,27 @@
-# Red Hat Summer Camp 2024 - React App
+# Red Hat Summer Camp 2024 - UI
+
+[Link to presentation](https://docs.google.com/presentation/d/1S0iKKqqhfFdo3DuUtDsDnYRC3Y9pcku0VxfwNV6EhOs/edit?usp=sharing)
+
+---
+# React app guidelines:
 
 This repository includes a template for Red Hat Summer Camp 2024 UI project
 
+`master` branch - sample pizza app for the class
+
+`starter` branch - starter app for the project
+
+[How to fork the repository?](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo#forking-a-repository)
+
+[How to manage access to the fork?](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository#about-access-management-for-repositories) (for the team project)
+
 ## Available Scripts
 
-In the project directory, you can run:
+To install the necessary dependencies, run:
+
+### `npm install`
+
+To start the application run:
 
 ### `npm start`
 
