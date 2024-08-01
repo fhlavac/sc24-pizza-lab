@@ -2,6 +2,8 @@
 
 [Link to presentation](https://docs.google.com/presentation/d/1S0iKKqqhfFdo3DuUtDsDnYRC3Y9pcku0VxfwNV6EhOs/edit?usp=sharing)
 
+[Team project assignment](https://docs.google.com/presentation/d/16Vuoljh1DyzeiKJp6cd9rEFIR-r7KNtMibhS7HQKn50/edit?usp=sharing)
+
 ---
 # React app guidelines:
 
