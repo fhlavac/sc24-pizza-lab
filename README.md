@@ -1,7 +1,16 @@
 # Red Hat Summer Camp 2024 - UI
 
 [Link to presentation](https://drive.google.com/file/d/1TydEjvW8YRV5OdlXgXGh1SZIsb4r1GJm/view?usp=sharing)
-
+---
+## How to collaborate on the project:
+- The whole team should work on a single fork owned by one of the members.
+- The owner of the selected repo has to grant his teammates write access to the fork (GitHub/Settings/Collaborators/Add).
+- Collaborators need to add the owner's fork as their upstream: `git remote add upstream https://github.com/<owners-username>/sc24-pizza-lab.git`.
+- Verify configuration using `git remote -v`.
+- Everyone creates a new branch locally for the project work (use `master` or `starter` as a base, name it for example <your-name>). DO NOT COMMIT AND PUSH TO `master`, just to the new branch.
+- When you commit and push changes (`git push upstream <your-branch>` for collaborators and `git push origin <your-branch>` for the owner) to your branch, open a PR against the owner's `master`.
+- If you need to update your branch with the new changes from `master`, use `git fetch upstream` (`origin` for the owner), switch to your branch if you are not on it already and use `git rebase upstream/master` (`origin` for the owner).
+- Generally, avoid modifying the same sections of the code to prevent conflicts from appearing.
 ---
 # React app guidelines:
 
