@@ -1,8 +1,6 @@
 # Red Hat Summer Camp 2024 - UI
 
-[Link to presentation](https://docs.google.com/presentation/d/1S0iKKqqhfFdo3DuUtDsDnYRC3Y9pcku0VxfwNV6EhOs/edit?usp=sharing)
-
-[Team project assignment](https://docs.google.com/presentation/d/16Vuoljh1DyzeiKJp6cd9rEFIR-r7KNtMibhS7HQKn50/edit?usp=sharing)
+[Link to presentation](https://drive.google.com/file/d/1TydEjvW8YRV5OdlXgXGh1SZIsb4r1GJm/view?usp=sharing)
 
 ---
 # React app guidelines:
