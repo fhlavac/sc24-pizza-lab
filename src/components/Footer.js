@@ -51,7 +51,7 @@ const Footer = () => {
               Opening Hours
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Monday - Friday: 10:00 AM - 10:00 PM
+              TEST Monday - Friday: 10:00 AM - 10:00 PM
             </Typography>
             <Typography variant="body1">Saturday - Sunday: 12:00 PM - 12:00 AM</Typography>
           </Grid>
