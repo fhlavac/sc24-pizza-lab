@@ -22,34 +22,40 @@ import juice from '../assets/images/juice.jpg';
 import cola from '../assets/images/cola.png';
 const pizzas = [
   {
-    name: 'Water - 0.5l',
+    name: 'Water',
     image: water,
     price: '20CZK',
+    litre: '0.5l',
   },
   {
-    name: 'Cola-Loca - 0.5l',
+    name: 'Cola-Loca',
     image: cola,
     price: '35CZK',
+    litre: '0.5l',
   },
   {
-    name: 'Orange juice - 0.5l',
+    name: 'Orange juice',
     image: juice,
     price: '35CZK',
+    litre: '0.5l',
   },
   {
-    name: 'Apple juice - 0.5l',
+    name: 'Apple juice',
     image: pizzaBbqChicken,
     price: '35CZK',
+    litre: '0.5l',
   },
   {
-    name: 'Beer - 0.3l',
+    name: 'Beer',
     image: pizzaVegetarian,
     price: '35CZK',
+    litre: '0.3l',
   },
   {
-    name: 'Wine - 0.2l',
+    name: 'Wine',
     image: pizzaFourCheese,
     price: '35CZK',
+    litre: '0.2l',
   },
 ];
 
@@ -108,10 +114,11 @@ const DrinkMenu = () => {
                   <Typography variant="h5" gutterBottom>
                     {pizza.name}
                   </Typography>
+                  <Typography variant="h6">{pizza.litre}</Typography>
                 </CardContent>
                 <CardActions sx={{ padding: '16px' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
-                    <Typography marginLeft={-35}>{pizza.price}</Typography>
+                    <Typography variant="h6">{pizza.price}</Typography>
 
                     <IconButton onClick={() => handleDecreaseQuantity(index)}>
                       <Remove />

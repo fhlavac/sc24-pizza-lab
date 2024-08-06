@@ -1,6 +1,5 @@
 import { AppBar, Button, IconButton, Menu, MenuItem, Stack, Toolbar, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import ModeSwitch from './ModeSwitch';
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
 import { Link as RouterLink } from 'react-router-dom';
@@ -22,7 +21,7 @@ const NavBar = () => {
           <LocalPizzaIcon htmlColor="#fff" />
         </IconButton>
         <Typography variant="h6" component={'h1'} color="white" sx={{ flexGrow: 1 }} aria-label="brand name">
-          Pizza Lab
+          FYPizza
         </Typography>
         <Stack direction="row" sx={{ flexGrow: 1 }} spacing={2}>
           <Button variant="text" color="inherit" aria-label="menu" onClick={handleMenuOpen}>
@@ -62,9 +61,6 @@ const NavBar = () => {
           >
             Contact
           </Button>
-        </Stack>
-        <Stack direction="row" spacing={2}>
-          <ModeSwitch />
         </Stack>
       </Toolbar>
     </AppBar>

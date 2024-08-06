@@ -67,7 +67,7 @@ const Footer = () => {
               Menu
             </Link>
             <br />
-            <Link href="/about" color="inherit" underline="hover">
+            <Link href="/About.js" color="inherit" underline="hover">
               About Us
             </Link>
             <br />
