@@ -4,7 +4,11 @@
 ---
 ## How to collaborate on the project:
 - The whole team should work on a single fork owned by one of the members.
-- The owner of the selected repo has to grant his teammates write access to the fork (GitHub/Settings/Collaborators/Add).
+- The owner of the selected repo has to create a base for the project (use `master` or `starter`) and grant his teammates write access to the fork (GitHub/Settings/Collaborators/Add).
+    - owner adds upstream repo reference: `git remote add upstream https://github.com/fhlavac/sc24-pizza-lab.git`
+    - `git fetch upstream`
+    - on the master branch do: `git reset --hard upstream master` or `starter`
+    - push the changes
 - Collaborators need to add the owner's fork as their upstream: `git remote add upstream https://github.com/<owners-username>/sc24-pizza-lab.git`.
 - Verify configuration using `git remote -v`.
 - Everyone creates a new branch locally for the project work (use `master` or `starter` as a base, name it for example <your-name>). DO NOT COMMIT AND PUSH TO `master`, just to the new branch.
