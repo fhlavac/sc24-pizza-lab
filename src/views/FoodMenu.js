@@ -16,7 +16,7 @@ import {
   Divider,
 } from '@mui/material';
 import { Favorite, FavoriteBorder, Add, Remove } from '@mui/icons-material';
-import GarlicIcon from '../components/GarlicIcon';
+//import GarlicIcon from '../components/GarlicIcon';
 import HerbsIcon from '../components/HerbsIcon';
 import pizzaVegetarian from '../assets/images/pizza-vegetarian.png';
 import pizzaFourCheese from '../assets/images/pizza-four-cheese.png';
@@ -120,7 +120,7 @@ const miniPizzas = [
 ];
 
 const FoodMenu = () => {
-  const [selectedCrust, setSelectedCrust] = useState({});
+  //const [selectedCrust, setSelectedCrust] = useState({});
   const [favorites, setFavorites] = useState({});
   const [quantity, setQuantity] = useState({});
 
@@ -212,60 +212,6 @@ const FoodMenu = () => {
                     inputProps={{ 'aria-label': 'favorite checkbox' }}
                   />
                 </IconButton>
-                <ToggleButtonGroup
-                  value={selectedCrust[index] || ''}
-                  exclusive
-                  onChange={(event, newCrust) => handleCrustChange(event, newCrust, index)}
-                  aria-label="crust selection"
-                  orientation="vertical"
-                  sx={{ position: 'absolute', right: 0, top: 10 }}
-                >
-                  <ToggleButton
-                    value="herb"
-                    sx={{
-                      backgroundColor: '#fff',
-                      '&.Mui-selected': {
-                        backgroundColor: '#cddfd8',
-                        stroke: '#fff',
-                        '&:hover': {
-                          backgroundColor: '#e6efeb',
-                          strokeWidth: '2',
-                          stroke: '#fff',
-                        },
-                      },
-                      '&:hover': {
-                        backgroundColor: '#e6efeb',
-                      },
-                      '&:focus': { outline: 'none' },
-                    }}
-                    aria-label="herb crust"
-                  >
-                    <HerbsIcon />
-                  </ToggleButton>
-                  <ToggleButton
-                    value="garlic"
-                    sx={{
-                      backgroundColor: '#fff',
-                      '&.Mui-selected': {
-                        backgroundColor: '#cddfd8',
-                        stroke: '#fff',
-                        '&:hover': {
-                          backgroundColor: '#e6efeb',
-                          strokeWidth: '2',
-                          stroke: '#fff',
-                        },
-                      },
-                      '&:hover': {
-                        backgroundColor: '#e6efeb',
-                      },
-                      '&:focus': { outline: 'none' },
-                    }}
-                    aria-label="garlic crust"
-                  >
-                    <GarlicIcon />
-                  </ToggleButton>
-                </ToggleButtonGroup>
-
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                   <Typography variant="h5" gutterBottom>
                     {pizza.name}
@@ -315,60 +261,6 @@ const FoodMenu = () => {
                     inputProps={{ 'aria-label': 'favorite checkbox' }}
                   />
                 </IconButton>
-                <ToggleButtonGroup
-                  value={selectedCrust[index] || ''}
-                  exclusive
-                  onChange={(event, newCrust) => handleCrustChange(event, newCrust, index)}
-                  aria-label="crust selection"
-                  orientation="vertical"
-                  sx={{ position: 'absolute', right: 0, top: 10 }}
-                >
-                  <ToggleButton
-                    value="herb"
-                    sx={{
-                      backgroundColor: '#fff',
-                      '&.Mui-selected': {
-                        backgroundColor: '#cddfd8',
-                        stroke: '#fff',
-                        '&:hover': {
-                          backgroundColor: '#e6efeb',
-                          strokeWidth: '2',
-                          stroke: '#fff',
-                        },
-                      },
-                      '&:hover': {
-                        backgroundColor: '#e6efeb',
-                      },
-                      '&:focus': { outline: 'none' },
-                    }}
-                    aria-label="herb crust"
-                  >
-                    <HerbsIcon />
-                  </ToggleButton>
-                  <ToggleButton
-                    value="garlic"
-                    sx={{
-                      backgroundColor: '#fff',
-                      '&.Mui-selected': {
-                        backgroundColor: '#cddfd8',
-                        stroke: '#fff',
-                        '&:hover': {
-                          backgroundColor: '#e6efeb',
-                          strokeWidth: '2',
-                          stroke: '#fff',
-                        },
-                      },
-                      '&:hover': {
-                        backgroundColor: '#e6efeb',
-                      },
-                      '&:focus': { outline: 'none' },
-                    }}
-                    aria-label="garlic crust"
-                  >
-                    <GarlicIcon />
-                  </ToggleButton>
-                </ToggleButtonGroup>
-
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                   <Typography variant="h5" gutterBottom>
                     {pizza.name}
