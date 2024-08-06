@@ -13,6 +13,7 @@ import {
   ToggleButtonGroup,
   Checkbox,
   IconButton,
+  Divider,
 } from '@mui/material';
 import { Favorite, FavoriteBorder, Add, Remove } from '@mui/icons-material';
 import GarlicIcon from '../components/GarlicIcon';
@@ -130,6 +131,57 @@ const FoodMenu = () => {
         <Typography variant="h3" gutterBottom>
           Our Food Menu
         </Typography>
+        <ToggleButtonGroup
+          value={''}
+          exclusive
+          onChange={(event, newCrust) => handleCrustChange(event, newCrust, index)}
+          aria-label="crust selection"
+          orientation="horizontal"
+        >
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            regular
+          </ToggleButton>
+          <Divider orientation="vertical" />
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            mini
+          </ToggleButton>
+          <Divider orientation="vertical" />
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            meat
+          </ToggleButton>
+          <Divider orientation="vertical" />
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            vegetarian
+          </ToggleButton>
+        </ToggleButtonGroup>
+
+        <Typography variant="body1" gutterBottom>
+          _
+        </Typography>
         <Grid container spacing={4}>
           {pizzas.map((pizza, index) => (
             <Grid item xs={6} sm={4} key={pizza.name}>
@@ -213,6 +265,7 @@ const FoodMenu = () => {
                 </CardContent>
                 <CardActions sx={{ padding: '16px' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+                    <Typography variant="body1">250 czk</Typography>
                     <IconButton onClick={() => handleDecreaseQuantity(index)}>
                       <Remove />
                     </IconButton>
