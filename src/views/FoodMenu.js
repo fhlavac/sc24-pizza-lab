@@ -143,7 +143,7 @@ const FoodMenu = () => {
   };
 
   return (
-    <Box sx={{ py: 4, background: '#F2F0EA' }}>
+    <Box sx={{ py: 4, background: '#F4B266' }}>
       <Container maxWidth="lg">
         <Typography variant="h3" gutterBottom>
           Our Food Menu
@@ -196,7 +196,7 @@ const FoodMenu = () => {
           </ToggleButton>
         </ToggleButtonGroup>
 
-        <Typography variant="body1" gutterBottom>
+        <Typography variant="body1" sx={{ color: '#E8E3DF' }} gutterBottom>
           _
         </Typography>
         <Grid container spacing={4} sx={{ marginBottom: '30px' }}>
