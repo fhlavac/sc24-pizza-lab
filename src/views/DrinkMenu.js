@@ -83,7 +83,7 @@ const DrinkMenu = () => {
   };
 
   return (
-    <Box sx={{ py: 4, background: '#F2F0EA' }}>
+    <Box sx={{ py: 4, background: '#F4B266' }}>
       <Container maxWidth="lg">
         <Typography variant="h3" gutterBottom>
           Our Drink Menu
