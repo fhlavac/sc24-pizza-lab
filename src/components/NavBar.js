@@ -16,7 +16,7 @@ const NavBar = () => {
     setAnchorEl(null);
   };
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#F4B266' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: '#9AD7A7' }}>
       <Toolbar>
         <IconButton size="large" edge="start" component={RouterLink} to="/" aria-label="logo">
           <LocalPizzaIcon htmlColor="#000" />
