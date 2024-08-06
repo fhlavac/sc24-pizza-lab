@@ -132,7 +132,7 @@ const FoodMenu = () => {
         </Typography>
         <Grid container spacing={4}>
           {pizzas.map((pizza, index) => (
-            <Grid item xs={12} sm={6} key={pizza.name}>
+            <Grid item xs={6} sm={4} key={pizza.name}>
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                 <CardMedia component="img" height="200" image={pizza.image} alt={pizza.name} />
                 <IconButton sx={{ position: 'absolute', left: 0, top: 10 }} onClick={() => handleFavoriteChange(index)}>
