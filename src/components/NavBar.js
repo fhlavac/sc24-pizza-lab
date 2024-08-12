@@ -1,6 +1,5 @@
 import { AppBar, Button, IconButton, Menu, MenuItem, Stack, Toolbar, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import ModeSwitch from './ModeSwitch';
 import LocalPizzaIcon from '@mui/icons-material/LocalPizza';
 import ArrowDropDownTwoToneIcon from '@mui/icons-material/ArrowDropDownTwoTone';
 import { Link as RouterLink } from 'react-router-dom';
@@ -16,17 +15,17 @@ const NavBar = () => {
     setAnchorEl(null);
   };
   return (
-    <AppBar position="sticky" sx={{ backgroundColor: '#036141' }}>
+    <AppBar position="sticky" sx={{ backgroundColor: '#9AD7A7' }}>
       <Toolbar>
         <IconButton size="large" edge="start" component={RouterLink} to="/" aria-label="logo">
-          <LocalPizzaIcon htmlColor="#fff" />
+          <LocalPizzaIcon htmlColor="#000" />
         </IconButton>
         <Typography variant="h6" component={'h1'} color="white" sx={{ flexGrow: 1 }} aria-label="brand name">
-          Pizza Lab
+          FYPizza
         </Typography>
         <Stack direction="row" sx={{ flexGrow: 1 }} spacing={2}>
-          <Button variant="text" color="inherit" aria-label="menu" onClick={handleMenuOpen}>
-            Our Offerings <ArrowDropDownTwoToneIcon htmlColor="#fff" />
+          <Button variant="text" sx={{ color: '#242424' }} aria-label="menu" onClick={handleMenuOpen}>
+            Our Offerings <ArrowDropDownTwoToneIcon htmlColor="#000" />
           </Button>
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
             <MenuItem component={RouterLink} to="/food-menu" onClick={handleMenuClose}>
@@ -38,12 +37,12 @@ const NavBar = () => {
           </Menu>
           <Button
             sx={{
+              color: '#242424',
               '&:hover': {
                 color: 'white',
               },
             }}
             variant="text"
-            color="inherit"
             component={RouterLink}
             to="about"
           >
@@ -51,20 +50,17 @@ const NavBar = () => {
           </Button>
           <Button
             sx={{
+              color: '#242424',
               '&:hover': {
                 color: 'white',
               },
             }}
             variant="text"
-            color="inherit"
             component={RouterLink}
             to="contact"
           >
             Contact
           </Button>
-        </Stack>
-        <Stack direction="row" spacing={2}>
-          <ModeSwitch />
         </Stack>
       </Toolbar>
     </AppBar>

@@ -13,9 +13,10 @@ import {
   ToggleButtonGroup,
   Checkbox,
   IconButton,
+  Divider,
 } from '@mui/material';
 import { Favorite, FavoriteBorder, Add, Remove } from '@mui/icons-material';
-import GarlicIcon from '../components/GarlicIcon';
+//import GarlicIcon from '../components/GarlicIcon';
 import HerbsIcon from '../components/HerbsIcon';
 import pizzaVegetarian from '../assets/images/pizza-vegetarian.png';
 import pizzaFourCheese from '../assets/images/pizza-four-cheese.png';
@@ -101,8 +102,25 @@ const pizzas = [
   },
 ];
 
+const miniPizzas = [
+  {
+    name: 'Mini Pepperoni',
+    image: pizzaPeperoni,
+    description: 'Pepperoni, but small',
+    ingredients: 'Tomato sauce, mozzarella cheese, pepperoni',
+    allergens: 'Dairy, Gluten',
+  },
+  {
+    name: 'Mini Margherita',
+    image: pizzaMargherita,
+    description: 'Margherita, but small',
+    ingredients: 'Tomato sauce, mozzarella cheese, fresh basil',
+    allergens: 'Dairy, Gluten',
+  },
+];
+
 const FoodMenu = () => {
-  const [selectedCrust, setSelectedCrust] = useState({});
+  //const [selectedCrust, setSelectedCrust] = useState({});
   const [favorites, setFavorites] = useState({});
   const [quantity, setQuantity] = useState({});
 
@@ -125,14 +143,65 @@ const FoodMenu = () => {
   };
 
   return (
-    <Box sx={{ py: 4, background: '#F2F0EA' }}>
+    <Box sx={{ py: 4, background: '#F4B266' }}>
       <Container maxWidth="lg">
         <Typography variant="h3" gutterBottom>
           Our Food Menu
         </Typography>
-        <Grid container spacing={4}>
-          {pizzas.map((pizza, index) => (
-            <Grid item xs={12} sm={6} key={pizza.name}>
+        <ToggleButtonGroup
+          value={''}
+          exclusive
+          onChange={(event, newCrust) => handleCrustChange(event, newCrust, index)}
+          aria-label="crust selection"
+          orientation="horizontal"
+        >
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            regular
+          </ToggleButton>
+          <Divider orientation="vertical" />
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            mini
+          </ToggleButton>
+          <Divider orientation="vertical" />
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            meat
+          </ToggleButton>
+          <Divider orientation="vertical" />
+          <ToggleButton
+            value="herb"
+            sx={{
+              backgroundColor: '#9AD7A7',
+            }}
+          >
+            <HerbsIcon />
+            vegetarian
+          </ToggleButton>
+        </ToggleButtonGroup>
+
+        <Typography variant="body1" sx={{ color: '#E8E3DF' }} gutterBottom>
+          _
+        </Typography>
+        <Grid container spacing={4} sx={{ marginBottom: '30px' }}>
+          {miniPizzas.map((pizza, index) => (
+            <Grid item xs={6} sm={4} key={pizza.name}>
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
                 <CardMedia component="img" height="200" image={pizza.image} alt={pizza.name} />
                 <IconButton sx={{ position: 'absolute', left: 0, top: 10 }} onClick={() => handleFavoriteChange(index)}>
@@ -143,60 +212,6 @@ const FoodMenu = () => {
                     inputProps={{ 'aria-label': 'favorite checkbox' }}
                   />
                 </IconButton>
-                <ToggleButtonGroup
-                  value={selectedCrust[index] || ''}
-                  exclusive
-                  onChange={(event, newCrust) => handleCrustChange(event, newCrust, index)}
-                  aria-label="crust selection"
-                  orientation="vertical"
-                  sx={{ position: 'absolute', right: 0, top: 10 }}
-                >
-                  <ToggleButton
-                    value="herb"
-                    sx={{
-                      backgroundColor: '#fff',
-                      '&.Mui-selected': {
-                        backgroundColor: '#cddfd8',
-                        stroke: '#fff',
-                        '&:hover': {
-                          backgroundColor: '#e6efeb',
-                          strokeWidth: '2',
-                          stroke: '#fff',
-                        },
-                      },
-                      '&:hover': {
-                        backgroundColor: '#e6efeb',
-                      },
-                      '&:focus': { outline: 'none' },
-                    }}
-                    aria-label="herb crust"
-                  >
-                    <HerbsIcon />
-                  </ToggleButton>
-                  <ToggleButton
-                    value="garlic"
-                    sx={{
-                      backgroundColor: '#fff',
-                      '&.Mui-selected': {
-                        backgroundColor: '#cddfd8',
-                        stroke: '#fff',
-                        '&:hover': {
-                          backgroundColor: '#e6efeb',
-                          strokeWidth: '2',
-                          stroke: '#fff',
-                        },
-                      },
-                      '&:hover': {
-                        backgroundColor: '#e6efeb',
-                      },
-                      '&:focus': { outline: 'none' },
-                    }}
-                    aria-label="garlic crust"
-                  >
-                    <GarlicIcon />
-                  </ToggleButton>
-                </ToggleButtonGroup>
-
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                   <Typography variant="h5" gutterBottom>
                     {pizza.name}
@@ -213,6 +228,56 @@ const FoodMenu = () => {
                 </CardContent>
                 <CardActions sx={{ padding: '16px' }}>
                   <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+                    <Typography variant="body1">40 czk</Typography>
+                    <IconButton onClick={() => handleDecreaseQuantity(index)}>
+                      <Remove />
+                    </IconButton>
+                    <Typography variant="body1" sx={{ margin: '0 12px' }}>
+                      {quantity[index] || 1}
+                    </Typography>
+                    <IconButton onClick={() => handleIncreaseQuantity(index)}>
+                      <Add />
+                    </IconButton>
+                  </Box>
+                  <Button variant="contained" color="primary" size="large">
+                    Add to my Order
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+
+        <Grid container spacing={4}>
+          {pizzas.map((pizza, index) => (
+            <Grid item xs={6} sm={4} key={pizza.name}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                <CardMedia component="img" height="200" image={pizza.image} alt={pizza.name} />
+                <IconButton sx={{ position: 'absolute', left: 0, top: 10 }} onClick={() => handleFavoriteChange(index)}>
+                  <Checkbox
+                    icon={<FavoriteBorder style={{ color: '#fff' }} />}
+                    checkedIcon={<Favorite color="error" />}
+                    checked={favorites[index] || false}
+                    inputProps={{ 'aria-label': 'favorite checkbox' }}
+                  />
+                </IconButton>
+                <CardContent sx={{ flexGrow: 1, p: 3 }}>
+                  <Typography variant="h5" gutterBottom>
+                    {pizza.name}
+                  </Typography>
+                  <Typography variant="body1" paragraph>
+                    {pizza.description}
+                  </Typography>
+                  <Typography variant="body2">
+                    <strong>Ingredients:</strong> {pizza.ingredients}
+                  </Typography>
+                  <Typography variant="body2">
+                    <strong>Allergens:</strong> {pizza.allergens}
+                  </Typography>
+                </CardContent>
+                <CardActions sx={{ padding: '16px' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+                    <Typography variant="body1">250 czk</Typography>
                     <IconButton onClick={() => handleDecreaseQuantity(index)}>
                       <Remove />
                     </IconButton>
